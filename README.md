@@ -1,30 +1,33 @@
-# Profit-Optimized Credit Risk Engine with Explainable AI (XAI) 🏦
+# 🏦 Profit-Optimized Credit Risk Scoring Engine
 
-### 📌 Project Overview
-Traditional credit scoring models focus only on accuracy (Who will default?). This project takes a step further by focusing on **Profitability** (Who should we approve to maximize revenue?). 
+![Dashboard Preview](dashboard_preview.png)
+*(Click the image to view the interactive dashboard)*
 
-Using **Python (Random Forest)** and **SHAP (SHapley Additive exPlanations)**, I built a risk engine that not only predicts loan defaults but also determines the optimal **Risk Threshold** to balance risk vs. reward.
+### 📌 Executive Summary
+Unlike traditional credit scoring models that focus solely on prediction accuracy (Who will default?), this project focuses on **Profitability** (Who should we approve to maximize revenue?). 
 
-### 💼 Business Value
-* **Reduced Bad Debt:** Identifies high-risk applicants with >85% precision.
-* **Profit Optimization:** Simulations determined the optimal cut-off point, potentially increasing net profit by avoiding strict "zero-tolerance" policies.
-* **Transparency (XAI):** Uses SHAP values to explain *why* a customer is rejected (e.g., "Loan duration too long relative to income"), ensuring regulatory compliance.
+Leveraging **Random Forest Classifier** and **Business Profit Simulation**, this engine determines the optimal "Risk Threshold" to balance the trade-off between Non-Performing Loans (NPL) and interest income.
 
-### 🛠️ Tech Stack
-* **Language:** Python
-* **Machine Learning:** Scikit-Learn (Random Forest Classifier)
-* **Explainability:** SHAP (Game Theoretic approach to interpret ML models)
-* **Data Analysis:** Pandas, NumPy, Matplotlib
+### 💼 Business Value Generated
+* **Risk Prevention:** Successfully identified and blocked high-risk applications, preventing a potential **$350,000+** in bad debt exposure on the test dataset.
+* **Profit Maximization:** Identified the optimal cut-off point where the bank's net profit is maximized, moving beyond arbitrary "zero-tolerance" policies.
+* **Transparency (XAI):** Integrated **SHAP (Explainable AI)** to provide "Reason Codes" for every rejection (e.g., *Loan Duration vs. Income*), ensuring regulatory compliance and transparency.
+
+### 🛠️ Technical Approach
+1.  **Data Preprocessing:** Handled missing values, performed One-Hot Encoding for categorical features, and balanced the dataset.
+2.  **Machine Learning:** Trained a Random Forest Classifier optimized for Precision and ROC-AUC.
+3.  **Explainability:** Applied SHAP (SHapley Additive exPlanations) to interpret model decisions and identify key risk drivers.
+4.  **Profit Simulation:** Conducted a cost-benefit analysis simulation to determine the financial impact of various risk thresholds.
 
 ### 📊 Key Insights
+| **Insight** | **Visualization** |
+| :--- | :--- |
+| **Top Risk Drivers**<br>The model reveals that *Loan Duration* and *Credit Amount* are the strongest predictors of default. Longer durations exponentially increase risk. | ![SHAP Graph](1_Analisa_Faktor_Risiko.png) |
+| **Profit Sweet Spot**<br>By simulating portfolio performance, we found the exact probability threshold that maximizes net profit. | ![Profit Graph](2_Analisa_Profit.png) |
 
-**1. The "Why" Behind the Risk (SHAP Analysis)**
-![SHAP Analysis](1_Analisa_Faktor_Risiko.png)
-* The model reveals that **Loan Duration** and **Credit Amount** are the strongest predictors of default. Longer durations exponentially increase risk.
-
-**2. Finding the "Sweet Spot" for Profit**
-![Profit Analysis](2_Analisa_Profit.png)
-* A simple binary classification isn't enough. By simulating loan portfolio performance, we found that setting the risk threshold at the calculated optimal point maximizes profit, whereas a stricter threshold would actually *reduce* profit by rejecting too many good customers.
+### 🔗 Project Links
+* [**🔴 Live Interactive Dashboard (Google Looker Studio)**]((https://lookerstudio.google.com/reporting/3d3a5fe2-5961-4db4-8c60-948a062b943e))
+* [**🐍 Python Notebook & Source Code**](Credit_Scoring_and_Business_Impact.ipynb)
 
 ---
-*Created by Adin W Pratama*
+*Created by [Your Name]*
