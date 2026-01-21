@@ -30,4 +30,4 @@ Leveraging **Random Forest Classifier** and **Business Profit Simulation**, this
 * [**🐍 Python Notebook & Source Code**](Credit_Scoring_and_Business_Impact.ipynb)
 
 ---
-*Created by [Your Name]*
+*Created by Adin W Pratama*
